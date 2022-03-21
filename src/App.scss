@@ -1,0 +1,13 @@
+.App{
+    .OnOff{
+       max-width: 450px;
+       margin: 0 auto;
+       &__circle {
+           width:25px;
+           height: 25px;
+           border-radius: 50%;
+           margin-left: 25px;
+           border: 1px solid black;
+       }
+    }
+}
