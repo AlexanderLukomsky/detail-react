@@ -1,9 +1,12 @@
-export const AccordionBody = () => {
+import { UsersType } from "../../App"
+
+type AccordionBodyType = {
+    items: UsersType[]
+}
+export const AccordionBody = (props: AccordionBodyType) => {
     return (
         <ul>
-            <li>123</li>
-            <li>123</li>
-            <li>123</li>
+            {props.items.map(i => <li key={i.value} id={i.value.toString()}>{i.title}</li>)}
         </ul>
     )
 }

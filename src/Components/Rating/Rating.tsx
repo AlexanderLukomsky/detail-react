@@ -1,6 +1,6 @@
 import { Star } from "./Star/Star"
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
-type RatingType = {
+export type RatingType = {
     value: RatingValueType
     callback: (value: RatingValueType) => void
 }

@@ -1,16 +1,14 @@
 import { useState } from "react";
-type UnControlledOnOffType = {
-    switchOn: (onOff: boolean) => void
+export type PropsType = {
+    defaultMode: boolean
 }
-export const UnControlledOnOff = (props: UnControlledOnOffType) => {
-    const [on, setOn] = useState<boolean>(false);
+export const UnControlledOnOff = (props: PropsType) => {
+    const [on, setOn] = useState<boolean>(props.defaultMode);
     const switchOn = () => {
         setOn(true)
-        props.switchOn(true)
     }
     const switchOff = () => {
         setOn(false)
-        props.switchOn(false)
     }
     const onStyle = {
         backgroundColor: on ? 'green' : 'white',
