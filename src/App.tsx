@@ -3,6 +3,7 @@ import './App.scss';
 import { Rating, RatingValueType } from './Components/Rating/Rating';
 import { Accordion } from './Components/Accordion/Accordion';
 import { OnOff } from './Components/OnOff/OnOff';
+import { CustomSelect, SelectItemsType } from './Components/CustomSelect/CustomSelect';
 export type UsersType = {
   title: string
   value: number
@@ -12,6 +13,17 @@ function App() {
   const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
   const [on, setOn] = useState(false);
   const users: UsersType[] = [{ title: 'Alex', value: 1 }, { title: 'Jora', value: 2 }, { title: 'Roma', value: 3 }, { title: 'Dima', value: 4 }]
+  const selectItems = [{ title: 'React', id: '1' }, { title: 'JS', id: '2' }, { title: 'TS', id: '3' }, { title: 'HTML', id: '4' }]
+  const [selectValue, setSelectValue] = useState(selectItems[0].title)
+  const changeSetSelectItems = (id: string) => {
+    const selectedItem = selectItems.find(i => i.id === id)?.title
+    if (selectedItem)
+      setSelectValue(
+        selectedItem
+      )
+
+  }
+  const onClickHandler = (value: number) => { console.log(value); }
   return (
     <div className="App">
       <div style={{ backgroundColor: 'grey' }}>
@@ -20,12 +32,14 @@ function App() {
           items={users}
           collapsed={accordionCollapsed}
           onChange={() => { setAccordionCollapsed(!accordionCollapsed) }}
+          onClickHandler={onClickHandler}
         />
         <Rating value={ratingValue} callback={setRatingValue} />
       </div>
       <div className='OnOff'>
         <OnOff on={on} setOn={setOn} />
       </div>
+      <CustomSelect items={selectItems} changeSetSelectItems={changeSetSelectItems} selectValue={selectValue} />
     </div>
   );
 }

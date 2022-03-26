@@ -1,0 +1,36 @@
+.wrapper {
+    padding: 40px;
+}
+.select {
+    position: relative;
+    text-align: center;
+    &__title {
+        font-size: 25px;
+    }
+    &__list {
+        position: absolute;
+        top: 50%;
+        list-style: none;
+        padding: 0;
+        background-color: aliceblue;
+        border: 1px solid #000;
+        min-width: 300px;
+        min-height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    &__item {
+        position: relative;
+        text-align: center;
+        width: 100px;
+        padding: 10px;
+        border: 1px solid transparent;
+        border-bottom: 1px solid #000;
+        &:hover {
+            border: 1px solid gold;
+            color: red;
+        }
+    }
+}

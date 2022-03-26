@@ -27,6 +27,6 @@ MenuCollapsedModTrue.args = {
 };
 export const ModeChanging = () => {
     const [value, setValue] = useState<boolean>(true)
-    return <Accordion title={"Mode Changing"} collapsed={value} onChange={() => { setValue(!value) }}
+    return <Accordion title={"Mode Changing"} collapsed={value} onChange={() => { setValue(!value) }} onClickHandler={action('item clicked')}
         items={[{ title: 'Alex', value: 1 }, { title: 'Jora', value: 2 }, { title: 'Roma', value: 3 }, { title: 'Dima', value: 4 }]} />
 }
