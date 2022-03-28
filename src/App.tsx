@@ -13,15 +13,10 @@ function App() {
   const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
   const [on, setOn] = useState(false);
   const users: UsersType[] = [{ title: 'Alex', value: 1 }, { title: 'Jora', value: 2 }, { title: 'Roma', value: 3 }, { title: 'Dima', value: 4 }]
-  const selectItems = [{ title: 'React', id: '1' }, { title: 'JS', id: '2' }, { title: 'TS', id: '3' }, { title: 'HTML', id: '4' }]
-  const [selectValue, setSelectValue] = useState(selectItems[0].title)
-  const changeSetSelectItems = (id: string) => {
-    const selectedItem = selectItems.find(i => i.id === id)?.title
-    if (selectedItem)
-      setSelectValue(
-        selectedItem
-      )
-
+  const selectItemsList = [{ title: 'React', id: '1' }, { title: 'JS', id: '2' }, { title: 'TS', id: '3' }, { title: 'HTML', id: '4' }]
+  const [selectedItem, setSelectValue] = useState(selectItemsList[0])
+  const showSelectedItem = (item: SelectItemsType) => {
+    setSelectValue(item)
   }
   const onClickHandler = (value: number) => { console.log(value); }
   return (
@@ -39,7 +34,7 @@ function App() {
       <div className='OnOff'>
         <OnOff on={on} setOn={setOn} />
       </div>
-      <CustomSelect items={selectItems} changeSetSelectItems={changeSetSelectItems} selectValue={selectValue} />
+      <CustomSelect items={selectItemsList} showSelectedItem={showSelectedItem} selectedItem={selectedItem} />
     </div>
   );
 }

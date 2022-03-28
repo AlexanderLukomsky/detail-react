@@ -5,32 +5,55 @@
     position: relative;
     text-align: center;
     &__title {
+        position: relative;
         font-size: 25px;
+        background-color: antiquewhite;
+        &::before {
+            content: "";
+            position: absolute;
+            border: 10px solid transparent;
+            border-top: 10px solid green;
+            right: 20px;
+            top: 10px;
+        }
+        &:hover::before {
+            border: 11px solid transparent;
+            border-top: 11px solid green;
+        }
     }
     &__list {
         position: absolute;
         top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
         list-style: none;
         padding: 0;
         background-color: aliceblue;
         border: 1px solid #000;
         min-width: 300px;
-        min-height: 250px;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+
         align-items: center;
+        padding: 10px 20px;
     }
     &__item {
         position: relative;
         text-align: center;
-        width: 100px;
+        width: 100%;
         padding: 10px;
         border: 1px solid transparent;
         border-bottom: 1px solid #000;
-        &:hover {
+
+        // &:hover {
+        //     border: 1px solid gold;
+        //     color: red;
+        //     background-color: bisque;
+        // }
+        &.selected {
             border: 1px solid gold;
             color: red;
+            background-color: bisque;
         }
     }
 }
