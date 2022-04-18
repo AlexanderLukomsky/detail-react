@@ -1,5 +1,7 @@
 import React, { useMemo } from "react"
 import { useState } from "react"
+import { KeyboardEvent, useEffect, useRef, } from "react"
+import s from '../Components/CustomSelect/CustomSelect.module.scss'
 export default {
     title: "UseMemoSelect"
 }
@@ -52,8 +54,7 @@ export const useMemoSelect = () => {
 }
 //*
 
-import { KeyboardEvent, useEffect, useRef, } from "react"
-import s from '../Components/CustomSelect/CustomSelect.module.scss'
+
 export type SelectItemsType = {
     title: string
     id: string
