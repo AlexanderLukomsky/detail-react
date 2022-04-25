@@ -1,0 +1,28 @@
+html {
+    height: 100%;
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.second-hand {
+    width: 5px;
+    height: 120px;
+    background-color: red;
+    border-radius: 3px;
+}
+
+.minute-hand {
+    width: 7px;
+    height: 100px;
+    border-radius: 4px;
+}
+
+.hour-hand {
+}
